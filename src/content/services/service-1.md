@@ -1,7 +1,7 @@
 ---
 title: Web Development
 date: 2024-11-06T15:16:00.000Z
-image: src/assets/images/ad1.jpg
+image: src/assets/images/webdev1.png
 ---
 
 Velit habitasse dui nostra curabitur aliquam metus si sed turpis luctus aptent. Eleifend orci commodo gravida tristique massa per rutrum tempor. Blandit fermentum pharetra si aliquet ultrices. Molestie magnis lacinia cras sollicitudin vulputate. Dapibus curae rutrum a himenaeos efficitur aliquet eu potenti. Donec si per accumsan nullam dapibus gravida litora quis erat eros et. Inceptos cubilia purus montes ipsum nullam ligula faucibus porttitor ridiculus per.
