@@ -19,7 +19,6 @@ const servicesCollection = defineCollection({
         z.object({
             title: z.string(),
             date: z.date(),
-            layout: z.string(),
             image: image().refine((img) => img.width >= 600, {
                 message: "Cover image must be at least 600px wide"
             })

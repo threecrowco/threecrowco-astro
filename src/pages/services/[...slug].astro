@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getEntry } from "astro:content";
+import { Breadcrumbs } from "astro-breadcrumbs";
+import "astro-breadcrumbs/breadcrumbs.css";
+
+const { slug } = Astro.params;
+
+if (!slug) {
+    throw new Error("No slug provided");
+}
+
+const service = await getEntry("services", slug);
+
+if (!service) {
+    return Astro.redirect("/404");
+}
+
+const { Content } = await service.render();
+---
+
+<BaseLayout title={service.data.title}>
+    <main class="px-edge py-24">
+        <article>
+            <!-- <a class="mb-2 inline-block text-sm" href="/services">Back to Services</a> -->
+            <div class="mb-4 text-xs">
+                <Breadcrumbs />
+            </div>
+            <header class="relative mb-8 h-[60dvh] w-full bg-black">
+                <Image
+                    transition:name={service.slug}
+                    class="h=[50vh] absolute inset-0 mb-8 aspect-video h-full w-full object-cover opacity-50"
+                    src={service.data.image}
+                    alt={service.data.title}
+                />
+            </header>
+            <h1 class="mb-4 text-4xl font-bold">{service.data.title}</h1>
+            <section>
+                <Content />
+            </section>
+        </article>
+    </main>
+</BaseLayout>
+<style is:global>
+    p {
+        @apply mb-4;
+    }
+</style>
