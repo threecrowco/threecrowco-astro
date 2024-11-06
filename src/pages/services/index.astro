@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const allServices = await getCollection("services");
+---
+
+<BaseLayout title="Services">
+    <main class="px-edge py-24">
+        <h1>Services</h1>
+        <p class="mb-4">
+            Here are the services we offer. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Hic, aspernatur! Quidem illum harum, tempore asperiores modi debitis dolorum, ab, fugit
+            alias numquam eaque suscipit accusantium. Facere repellendus dolores quaerat voluptate
+            voluptas aut vero dolor quas, non incidunt dolore numquam, ea tempore odit officiis fuga
+            debitis.
+        </p>
+        <section class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {
+                allServices.map((service) => (
+                    <a class="relative block overflow-hidden" href={`/services/${service.slug}`}>
+                        <Image
+                            width={960}
+                            height={960}
+                            src={service.data.image}
+                            alt={service.data.title}
+                            class="aspect-square object-cover object-center"
+                        />
+                        <h3>{service.data.title}</h3>
+                    </a>
+                ))
+            }
+        </section>
+    </main>
+</BaseLayout>
