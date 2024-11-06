@@ -16,7 +16,7 @@ const allServices = await getCollection("services");
             voluptas aut vero dolor quas, non incidunt dolore numquam, ea tempore odit officiis fuga
             debitis.
         </p>
-        <section class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <section class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {
                 allServices.map((service) => (
                     <a class="relative block overflow-hidden" href={`/services/${service.slug}`}>

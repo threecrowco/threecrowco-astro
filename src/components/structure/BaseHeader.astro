@@ -1,5 +1,6 @@
 ---
-// import FullScreenNav from "./FullScreenNav.astro";
+// import FullScreenNav from "./FullScreenNav.astro"
+const isDev = import.meta.env.DEV;
 ---
 
 <header class="flex h-[80px] items-center justify-between px-edge">
@@ -11,7 +12,15 @@
     <nav class="space-x-4">
         <a href="/about" title="About Us">About Us</a>
         <a href="/projects" title="Projects">Projects</a>
+        <a href="/services" title="Services">Services</a>
         <a href="/contact" title="Contact Us">Contact Us</a>
+        {
+            isDev && (
+                <a class="pl-12" href="/admin" title="Admin">
+                    Admin
+                </a>
+            )
+        }
     </nav>
 </header>
 <!-- <FullScreenNav /> -->

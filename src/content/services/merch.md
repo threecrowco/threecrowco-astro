@@ -1,9 +1,9 @@
 ---
-layout: services
 title: Merch
 date: 2024-11-06T10:15:00.000Z
 image: src/assets/images/trophy1.png
 ---
+
 Platea posuere ligula commodo enim porttitor fusce class euismod ex interdum facilisis. Elementum libero turpis molestie neque facilisis urna. Dui quisque porttitor feugiat montes nec fames est. Etiam facilisi ultrices viverra si aliquet netus et mattis habitant. Interdum turpis aenean mus vulputate placerat maecenas letius consectetur ullamcorper vivamus augue. Platea consectetur eros vivamus efficitur scelerisque nascetur commodo lectus. Massa dictum aliquam fames feugiat diam fusce. Nec metus etiam bibendum curabitur sodales diam magna convallis.
 
 Congue nullam diam sapien pretium mauris eleifend si donec finibus etiam. Urna ut mattis elit ante cursus. Pretium mauris dis vel orci letius. Letius ultricies lacinia facilisis aliquet parturient erat etiam felis.
