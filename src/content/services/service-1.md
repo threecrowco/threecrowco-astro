@@ -1,6 +1,6 @@
 ---
-title: Service 1
-date: 2024-11-06T01:31:00.000Z
+title: Web Development
+date: 2024-11-06T15:16:00.000Z
 image: src/assets/images/ad1.jpg
 ---
 
