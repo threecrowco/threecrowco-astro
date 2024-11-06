@@ -1,0 +1,47 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import BaseFooter from "../components/structure/BaseFooter.astro";
+import BaseHeader from "../components/structure/BaseHeader.astro";
+
+const { title, description } = Astro.props;
+const defaultTitle = "Astro";
+const defaultDescription =
+    "Astro is a fresh new static site generator. It's built with Svelte and Astro and comes with a beautiful developer experience out of the box.";
+---
+
+<html class="scroll-smooth" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={description || defaultDescription} />
+        <link rel="stylesheet" href="https://use.typekit.net/uyq5ogd.css" />
+        <title>{title || defaultTitle}</title>
+        <ViewTransitions />
+    </head>
+    <body class="min-h-screen antialiased">
+        <BaseHeader />
+        <slot />
+        <BaseFooter />
+    </body>
+</html>
+<style>
+    body {
+        @apply bg-white text-xl text-black;
+    }
+    h1,
+    h2 {
+        @apply text-6xl font-bold;
+    }
+    h3 {
+        @apply text-4xl font-bold;
+    }
+    h4,
+    h5 {
+        @apply text-2xl font-bold;
+    }
+    h6 {
+        @apply text-xl font-bold;
+    }
+</style>

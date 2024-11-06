@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+// import { CldImage } from "astro-cloudinary";
+import AgencyImage from "../assets/images/agency1.jpg";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About Us">
+    <main class="px-edge py-24">
+        <h1>About Three Crow Creative</h1>
+        <p class="text-gradient">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, nemo tempora,
+            animi similique praesentium necessitatibus non provident dolorem quam ipsam distinctio
+            doloremque laborum omnis libero quo rem ut, illum rerum reiciendis voluptatum aperiam.
+            Quos, perspiciatis illo! Obcaecati voluptates laboriosam, mollitia quam cupiditate ipsa
+            ea eveniet?
+        </p>
+        <a href="/contact" class="relative mx-auto block aspect-video max-w-7xl">
+            <Image
+                transition:name="agency"
+                class="h-full w-full object-cover object-center"
+                src={AgencyImage}
+                alt="Three Crow Creative Agency"
+            />
+        </a>
+    </main>
+</BaseLayout>

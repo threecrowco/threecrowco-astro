@@ -1,0 +1,75 @@
+---
+
+---
+
+<section class="flex items-center justify-between">
+    <div class="flex h-full w-1/3 flex-col justify-between bg-gray-500">
+        <ul class="pl-12">
+            <li data-bg="red"><a href="#">Google</a></li>
+            <li data-bg="blue"><a href="#">Facebook</a></li>
+            <li data-bg="black"><a href="#">Twitter</a></li>
+            <li data-bg="gold"><a href="#">Instagram</a></li>
+            <li data-bg="orange"><a href="#">LinkedIn</a></li>
+        </ul>
+    </div>
+    <div id="hover-content" class="duration-250 w-2/3 bg-gray-700 text-white transition-colors">
+        <h2>Hover over the links</h2>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi sequi magnam dolorum
+            deserunt facilis quas perspiciatis mollitia itaque nam officia, veniam tempora
+            temporibus voluptates nostrum eligendi dignissimos! Incidunt ullam aliquam corrupti
+            quibusdam laboriosam ut laborum cum ab quis doloribus provident explicabo optio esse
+            aperiam enim consectetur, expedita hic quia beatae? Eius iusto, pariatur, quae officia
+            in quo inventore, nisi minima repellat ratione quam. Molestias at cumque laborum, qui
+            amet necessitatibus facere hic incidunt, pariatur molestiae eum alias. Excepturi
+            praesentium suscipit laborum, dolorem commodi, possimus aliquam blanditiis pariatur ea
+            aliquid sed omnis eaque cumque? Aut facilis, maxime illum eum quaerat asperiores. Esse
+            temporibus eos illo magni quibusdam, praesentium maiores provident accusamus laborum et
+            earum eius adipisci minus enim culpa odio! Quae quis, quaerat molestiae ex aliquam ipsa?
+            Asperiores, a consequuntur? Perspiciatis repudiandae nulla quae sit assumenda dolores
+            accusantium a, quod nostrum numquam! Sequi at vero magni debitis, eaque magnam quam, a
+            quaerat iure voluptatibus reiciendis! Ipsam nam sunt, molestiae aliquam sequi ex
+            inventore amet porro ut laudantium non voluptatibus necessitatibus magnam. Nobis
+            voluptate optio consequuntur natus aperiam enim, earum repudiandae? Possimus cupiditate
+            omnis temporibus, inventore aliquid magnam quidem ea suscipit, repellendus reprehenderit
+            commodi recusandae accusamus molestiae asperiores beatae sed repellat iure tenetur
+            mollitia debitis. Consectetur nulla placeat cum aliquam fuga dignissimos error eos sequi
+            debitis. Provident molestias, vitae maxime quidem recusandae sit reiciendis ratione quod
+            voluptates necessitatibus expedita eos, enim perferendis? Deleniti deserunt inventore
+            id, nam, consequatur beatae, nemo delectus alias explicabo cumque quis officia
+            perferendis iusto placeat quas eaque neque?
+        </p>
+    </div>
+</section>
+<style>
+    * {
+        transition: all 0.25s ease-in-out;
+    }
+    ul li a {
+        color: #ff0;
+        font-size: 3rem;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    ul:hover li a {
+        color: rgba(255, 255, 255, 0.5);
+    }
+    ul li:hover a {
+        color: #fff;
+    }
+</style>
+<script>
+    const content = document.getElementById("hover-content");
+    const listItems = document.querySelectorAll("li");
+
+    listItems.forEach((item) => {
+        item.addEventListener("mouseover", () => {
+            const bgColor = item.getAttribute("data-bg");
+            content.style.backgroundColor = bgColor;
+        });
+
+        item.addEventListener("mouseout", () => {
+            content.style.backgroundColor = "#374151"; // Tailwind gray-700
+        });
+    });
+</script>

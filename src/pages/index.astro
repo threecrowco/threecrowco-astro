@@ -1,16 +1,13 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Welcome to Astro.">
+    <main class="px-edge py-24">
+        <h1>Welcome to <span class="text-gradient">Astro</span></h1>
+        <p class="text-gradient">
+            A fresh new static site generator. It's built with Svelte and Astro and comes with a
+            beautiful developer experience out of the box.
+        </p>
+    </main>
+</BaseLayout>

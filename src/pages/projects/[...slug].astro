@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getEntry } from "astro:content";
+import { Breadcrumbs } from "astro-breadcrumbs";
+import "astro-breadcrumbs/breadcrumbs.css";
+
+const { slug } = Astro.params;
+
+if (!slug) {
+    throw new Error("No slug provided");
+}
+
+const project = await getEntry("projects", slug);
+
+if (!project) {
+    return Astro.redirect("/404");
+}
+
+const { Content } = await project.render();
+---
+
+<BaseLayout title={project.data.title}>
+    <main class="px-edge py-24">
+        <article>
+            <!-- <a class="mb-2 inline-block text-sm" href="/projects">Back to Projects</a> -->
+            <div class="mb-4 text-xs">
+                <Breadcrumbs />
+            </div>
+            <header class="relative mb-8 h-[60dvh] w-full bg-black">
+                <Image
+                    transition:name={project.slug}
+                    class="h=[50vh] absolute inset-0 mb-8 aspect-video h-full w-full object-cover opacity-50"
+                    src={project.data.coverImage}
+                    alt={project.data.title}
+                />
+            </header>
+            <h1 class="mb-4 text-4xl font-bold">{project.data.title}</h1>
+            <div class="mb-6">
+                <p class="text-lg text-gray-600">Client: {project.data.client}</p>
+                <p class="text-gray-600">
+                    Published: {project.data.pubDate.toLocaleDateString()}
+                </p>
+            </div>
+            <section>
+                <Content />
+            </section>
+        </article>
+    </main>
+</BaseLayout>
+<style is:global>
+    p {
+        @apply mb-4;
+    }
+</style>

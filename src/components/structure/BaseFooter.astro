@@ -1,0 +1,20 @@
+---
+import FooterLegalLinks from "../elements/FooterLegalLinks.astro";
+import FooterSocialLinks from "../elements/FooterSocialLinks.astro";
+const year = new Date().getFullYear();
+---
+
+<footer class="flex items-center justify-between px-edge py-16 text-xs">
+    <div>
+        <p>
+            &copy; {year} Three Crow Creative. All rights reserved. <span
+                class="mx-6 mb-1 hidden h-[1px] w-[24px] bg-black lg:inline-block"></span> Made with
+            love in the US of A.
+        </p>
+    </div>
+    <div class="flex items-center justify-between">
+        <FooterLegalLinks />
+        <span class="mx-6 hidden h-[1px] w-[24px] bg-black lg:block"></span>
+        <FooterSocialLinks />
+    </div>
+</footer>

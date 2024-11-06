@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const allProjects = await getCollection("projects");
+---
+
+<BaseLayout title="Projects and Case Studies">
+    <main class="grow px-edge py-24">
+        <h1>Latest Projects</h1>
+        <p class="text-gradient mb-12">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, nemo tempora,
+            animi similique praesentium necessitatibus non provident dolorem quam ipsam distinctio
+            doloremque laborum omnis libero quo rem ut, illum rerum reiciendis voluptatum aperiam.
+            Quos, perspiciatis illo! Obcaecati voluptates laboriosam, mollitia quam cupiditate ipsa
+            ea eveniet?
+        </p>
+        <section class="grid gap-6 py-6 md:grid-cols-2 lg:grid-cols-4">
+            {
+                allProjects.map((project) => (
+                    <a
+                        href={`/projects/${project.slug}`}
+                        class="aspect-poster relative block overflow-hidden"
+                    >
+                        <Image
+                            width={960}
+                            height={960}
+                            transition:name={project.slug}
+                            class="poster-cover h-full w-full object-cover object-center opacity-50 hover:scale-110 hover:opacity-100"
+                            src={project.data.coverImage}
+                            alt={project.data.title}
+                        />
+                    </a>
+                ))
+            }
+        </section>
+    </main>
+</BaseLayout>
+<style>
+    * {
+        @apply transition-all duration-500 ease-in-out;
+    }
+</style>

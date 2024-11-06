@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components";
+const socialLinks = [
+    {
+        name: "X",
+        href: "https://x.com/threecrowco"
+    },
+    {
+        name: "Instagram",
+        href: "https://www.instagram.com/threecrowco/"
+    },
+    {
+        name: "LinkedIn",
+        href: "https://www.linkedin.com/company/three-crow-creative/"
+    }
+];
+---
+
+<nav class="flex items-center justify-between space-x-8">
+    {
+        socialLinks.map((link) => (
+            <a href={link.href} target="_blank" rel="noopener noreferrer" title={link.name}>
+                <Icon name={"simple-icons:" + link.name.toLowerCase()} class="h-4 w-4" />
+            </a>
+        ))
+    }
+</nav>
