@@ -1,7 +1,8 @@
-local_backend: true
-
 backend:
-    name: "git-gateway"
+    name: "github"
+    repo: "threecrowco/threecrowco-astro"
+    use_graphql: true
+
 media_folder: "src/assets/images"
 public_folder: "src/assets/images"
 
